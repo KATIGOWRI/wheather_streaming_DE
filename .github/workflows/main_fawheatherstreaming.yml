@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure Functions: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python project to Azure Function App - fawheatherstreaming
+name: Build and deploy Python project to Azure Function App - faWheatherstreaming
 
 on:
   push:
@@ -69,15 +69,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_24B54EA2F7334BE3B6EA3212A580F99E }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4B411EA64D044347B2C6DB564812826D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_14A9C8F1E2534069B651C8A22D98AAFF }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F4426C5510624AF98A632214A6576292 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8771AA58B6EB47EAB4C42F7AD9CB8ECC }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B20B750C16B14F59A15FA302411BCEDC }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'fawheatherstreaming'
+          app-name: 'faWheatherstreaming'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           
